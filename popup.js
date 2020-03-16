@@ -100,11 +100,21 @@ $(document).ready(function() {
     var target = e.currentTarget;
     indicateCell(target);
     $("#note").show();
+  });
 
+  $("div.day").hover(function(e){
     $(document).keydown(function(event){
       var key = (event.keyCode ? event.keyCode : event.which);
       if(key == '76' && !editing) setLock(tMonth, tDay);
     });
+  });
+
+  $("div.day").mousedown(function(e){
+    if (event.shiftKey) eraseColor(e); //any click & shift
+    else {
+      if (e.which === 1) switchColor(e); //left mouse click
+      else if (e.which === 3 && !editing) setLock(tMonth, tDay); //right mouse click
+    }
   });
 
   $("div.day").mouseleave(function(e) {
@@ -112,8 +122,6 @@ $(document).ready(function() {
     $('#tail').hide();
     if(!locked) $("#note").hide();
   });
-
-  $("div.day").on('click', singleClick);
 
   $("#infooverlay").click(function(e) {
     $("#info").hide();
@@ -145,14 +153,6 @@ $(document).ready(function() {
     killNote(lMonth, lDay);
   });
 });
-
-function singleClick(e){
-  if (event.shiftKey) eraseColor(e); //any click & shift
-  else {
-    if (e.which === 1) switchColor(e); //left mouse click
-    else if (e.which === 3 && !editing) setLock(tMonth, tDay); //right mouse click
-  }
-}
 
 //ANIMATION//
 
