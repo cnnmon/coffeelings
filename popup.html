@@ -9,6 +9,7 @@
 
 <body>
   <div id="info">
+    <button id="convertText">save journal as .txt</button>
     <img src="art/info.png"></img>
     <div id="infooverlay"></div>
   </div>
@@ -41,6 +42,7 @@
     <div id="infoNote">
       <textarea id="input" placeholder="how are you?"></textarea>
       <div id="radio">
+        <p>themes:</p>
         <label>
           <input type="radio" name="reason" value="work" checked>
           <i class="fa fa-briefcase" aria-hidden="true"></i>
@@ -53,12 +55,19 @@
           <input type="radio" name="reason" value="chill">
           <i class="fa fa-headphones" aria-hidden="true"></i>
         </label>
-    </div>
+        <br>
+      </div>
     </div>
 
     <div id="date">
       <p id="month" style="font-family: 'Yesteryear'; font-size: 25px;">uwu</p>
       <p id="day">420</p>
+      <select class="years" id="years">
+      </select>
+    </div>
+
+    <div id="donate">
+      <a href='https://ko-fi.com/Z8Z81ZLEW' target='_blank' id="kofiButton"><img src='https://cdn.ko-fi.com/cdn/kofi2.png?v=2' border='0' alt='Buy Me a Coffee' /></a>
     </div>
 
     <div id="bg">
@@ -77,6 +86,7 @@
     <div id="header">
       <button id="goToPick"><i class="fa fa-arrow-left" aria-hidden="true"></i></button>
       <button id="goToInfo"><i class="fa fa-question" aria-hidden="true"></i></button>
+      <h1 id="cal_year">2000</h1>
     </div>
     <ul class="months">
       <li id="JanName">J</li>
@@ -155,7 +165,7 @@
         <div class="day"></div>
         <div class="day"></div>
         <div class="day"></div>
-        <div class="day"></div>
+        <div class="day" id="leapDay"></div>
         <div class="day" id="notADay"></div>
         <div class="day" id="notADay"></div>
       </div>
