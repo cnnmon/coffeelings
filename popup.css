@@ -157,6 +157,23 @@ div#date {
   margin-top: 220px;
 }
 
+.years {
+  background-color: var(--caramel);
+  font-family: inherit;
+  color: inherit;
+  transition: 0.2s;
+  border: none;
+}
+
+.years:hover {
+  box-shadow: 0 0 10px 100px var(--lightvanilla) inset;
+  background-color: var(--darkvanilla);
+}
+
+.years:focus {
+  outline: none;
+}
+
 /* * * */
 /*CALENDAR*/
 /* * * */
@@ -231,7 +248,7 @@ span#dayNum {
 div#header {
   position: absolute;
   margin-left: -80px;
-  margin-top: 920px;
+  margin-top: 900px;
   text-align: right;
 }
 
@@ -254,9 +271,35 @@ div#header button:hover {
   opacity: 1;
 }
 
+div#header #cal_year {
+  margin-top: 00px;
+  color: var(--light);
+}
+
 /*SETTING*/
 #info {
   display: none;
+}
+
+div#info button#convertText {
+  position: absolute;
+  z-index: 4;
+  font-size: 10px;
+  color: var(--light);
+  background: transparent;
+  border: 1px solid var(--light);
+  border-radius: 6px;
+  padding: 2px 8px;
+  transition-duration: 0.4s;
+  cursor: pointer;
+  margin: 358px 100px;
+  opacity: 0.8;
+}
+
+div#info button#convertText:hover {
+  background-color: var(--light);
+  color: var(--vanilla);
+  opacity: 1;
 }
 
 #infooverlay {
@@ -402,9 +445,9 @@ div#infoNote textarea:focus {
 
 div#radio {
   position: absolute;
-  margin-left: 195px;
-  margin-top: 173px;
-  font-size: 12px;
+  margin-left: 150px;
+  margin-top: 170px;
+  font-size: 10px;
   color: var(--city);
 }
 
@@ -415,6 +458,10 @@ div#radio i {
 
 div#radio i:hover {
   opacity: 0.8;
+}
+
+div#radio p {
+  margin-right: 5px;
 }
 
 [type=radio] {
@@ -433,4 +480,22 @@ div#radio i:hover {
 [type=radio]:checked + i {
   color: var(--caramel);
   background-color: var(--city);
+}
+
+div#donate {
+  position: absolute;
+  display: block;
+  bottom: -275;
+  right: 130;
+}
+
+a#kofiButton img {
+  border: 0px;
+  opacity: 0.5;
+  height: 25px;
+  transition: 0.2s;
+}
+
+a#kofiButton img:hover {
+  opacity: 1;
 }
