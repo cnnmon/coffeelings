@@ -376,7 +376,7 @@ function start() {
   //this can stay storage.sync... why not
   chrome.storage.sync.get(['firstRun'], function(result) {
     if (result.firstRun == 3) getSaved();
-    else if (result.firstRun == 1 or result.firstRun == 2) switchToLocal();
+    else if (result.firstRun == 1 || result.firstRun == 2) switchToLocal();
     else firstRun();
   });
 }
